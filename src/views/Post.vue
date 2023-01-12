@@ -12,6 +12,8 @@
 
   <router-view></router-view>
 
+  <button @click="back">Go To Posts</button>
+
 </template>
 
 <script>
@@ -25,6 +27,12 @@ export default {
 
   created() {
     this.postId = this.$route.params.id
+  },
+
+  methods: {
+    back() {
+      this.$router.push({name: 'posts', query: {text: 'test'} });
+    }
   }
 
 }
